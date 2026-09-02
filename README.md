@@ -1,5 +1,7 @@
 # dsh-media-serve
 
+（注意，本插件包括本说明文档、push等操作均由大肥鱼也就是deepseek harness自行完成，harness版本为Harness 0.1.1-rc2）
+
 宿主端(node) DeepSeek Harness 插件：在本机 GUI 自带的 Web 服务上注册 `/media`
 路由，把 DeepSeek Harness 工作区里的媒体文件暴露成 `http://<host>:<port>/media/<相对路径>`。
 
