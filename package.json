@@ -9,6 +9,21 @@
     "cordis.patch.yml",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qfwycn/dsh-media-serve.git"
+  },
+  "homepage": "https://github.com/qfwycn/dsh-media-serve#readme",
+  "bugs": {
+    "url": "https://github.com/qfwycn/dsh-media-serve/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "media",
+    "image"
+  ],
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
