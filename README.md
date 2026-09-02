@@ -1,5 +1,21 @@
 # dsh-media-serve
 
+> ## ⚠️ 重要：这个插件只是「显示」，不是「识别」
+>
+> **本插件的作用是让 Agent 能把图片/文件“显示”给你（人类）看** —— 它把文件通过
+> `/media` 变成浏览器可加载的图片 URL 展示在对话里。
+>
+> 它**并不会**（也不能）让大模型去“识别、读取、理解”图片内容：模型是纯文本的，
+> 它自己看不到 `/media` 里的画面。请不要要求模型去 OCR / 描述 / 判断图片里的内容，
+> 也不要把“模型显示了一张图”当成“模型看懂了这张图”——否则可能因模型“没真正看到”
+> 而理解错误、进而执行错误的操作。
+>
+> 需要模型真正“看懂”图片时，请另配支持视觉(Vision)的模型或图像识别方案。
+>
+> (EN) This plugin only *displays* files/images to the human in the chat via
+> `/media`. It does **not** give the LLM vision — the text-only model cannot see
+> or OCR the images. Do not ask the model to interpret image content through it.
+
 （注意，本插件包括本说明文档、push等操作均由大肥鱼也就是deepseek harness自行完成，harness版本为Harness 0.1.1-rc2）
 
 宿主端(node) DeepSeek Harness 插件：在本机 GUI 自带的 Web 服务上注册 `/media`
