@@ -29,17 +29,34 @@
 > 兼容说明：即便 `cordis.patch.yml` 里保留了一个别的机器的 `config.root`（例如示例的
 > `D:/工作区`），在该机器上这个目录不存在会被自动跳过，转而使用注册表的真实工作区，因此不会失效。
 
-## 安装
+## 安装（免路径方式优先）
+
+安装后需**重启 dsh（web profile）/ 刷新 GUI 页面**让插件生效。
+
+### A. 从 GitHub 安装（推荐，免本地路径）
+仓库在 `https://github.com/qfwycn/dsh-media-serve`，在 DSH 插件市场按 id 安装，
+或直接在命令行用 GitHub 来源拉取：
 
 ```bash
-# 在 dsh 运行目录里，把本插件作为本地 link 装进 web profile：
-dsh plugin --profile web add link:<本目录的绝对路径>
-
-# 例如
-dsh plugin --profile web add link:C:\path\to\dsh-media-serve
+dsh plugin --profile web add github:qfwycn/dsh-media-serve
 ```
 
-安装后需**重启 dsh / 刷新 GUI 页面**让插件生效。
+> 若市场里暂时搜不到新仓库，用下文的 B（npm）或 C（本地 link）装一次即可。
+
+### B. 从 npm 安装（免路径、版本化）
+发布到 npm 后即可用裸包名安装：
+
+```bash
+dsh plugin --profile web add dsh-media-serve
+# 或指定版本
+dsh plugin --profile web add dsh-media-serve@latest
+```
+
+### C. 本地开发 / 离线安装（用路径 link）
+```bash
+dsh plugin --profile web add link:D:\path\to\dsh-media-serve
+```
+
 （可选）若要强制暴露注册表之外/特定目录，可在 profile 的补丁里配置 `config.root`，或启动时设
 `DSH_MEDIA_ROOT=C:/some/dir;D:/another`。
 
