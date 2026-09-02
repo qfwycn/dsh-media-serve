@@ -76,14 +76,22 @@ dsh plugin --profile web add link:D:\path\to\dsh-media-serve
 （可选）若要强制暴露注册表之外/特定目录，可在 profile 的补丁里配置 `config.root`，或启动时设
 `DSH_MEDIA_ROOT=C:/some/dir;D:/another`。
 
-## 怎么用（给对话里的 agent）
+## 使用（对用户：几乎零操作）
 
-在任意对话里告诉 agent：
+安装并重启后，配合 agent 指令（本仓库说明的 `AGENTS.md`；用户级可放 `~/.dsh/AGENTS.md`），
+**新开的对话里的 agent 会自动知道**：它可以把工作区内的图片/文件直接显示给你，
+**不需要你再做任何强调、也不用贴 URL**。
 
-> 把文件 `<工作区内某路径>\xxx.png` 显示出来；它对应当前工作区 URL
-> `http://<host>:<port>/media/<相对路径>`，用 markdown 图片引用它。
+你只要像平常一样提需求即可，例如：
 
-agent 就能用 markdown 图片把它渲染到对话里（GUI 原生支持渲染该 URL 下的图片，已实测）。
+> “把这张截图显示出来”“打开那个图片文件”“我想看看 xxx.png”
+
+agent 会自动用 `/media` 把它渲染成图片（如 `http://127.0.0.1:3080/media/<相对路径>`，
+GUI 原生支持渲染，已实测）。
+
+> 补充：如果某个对话里的 agent 还不知道能这么做（例如它所在的机器没配用户级 `AGENTS.md`），
+> 简单说一句即可让它明白——
+> “你可以用 `http://127.0.0.1:3080/media/<相对路径>` 显示工作区内的图片”。
 
 ## 安全说明
 
