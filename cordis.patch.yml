@@ -1,0 +1,18 @@
+# dsh-media-serve bundle patch.
+#
+# Loads the plugin into the active profile's config tree. `config.root` is
+# OPTIONAL — a list (or single path) of directories to force-expose at
+# http://<host>:<port>/media/... . When omitted (or when the configured path
+# does not exist on the machine), the plugin automatically serves the DeepSeek
+# Harness workspace(s) from the workspace registry, so a copy installed on a
+# machine with a different workspace path just works with no edits. You may
+# also set the DSH_MEDIA_ROOT env var (list separated by ';') instead of `config`.
+#
+# The value below is only an example/fallback for the original machine; keep or
+# remove it freely. Relative paths resolve against the dsh working directory.
+
+- insert:
+    - id: dsh-media-serve
+      name: dsh-media-serve
+      config:
+        root: 'D:/工作区'

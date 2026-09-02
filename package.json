@@ -1,0 +1,18 @@
+{
+  "name": "dsh-media-serve",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness host plugin: serves a configured workspace/media folder over the web server under /media, so any conversation can display local images by referencing http://<host>:<port>/media/<relative-path>.",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}
